@@ -1,0 +1,2 @@
+clone command:
+git clone <url>
