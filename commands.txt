@@ -1,2 +1,5 @@
 clone command:
 git clone <url>
+
+make a dir as git repo:
+git init
