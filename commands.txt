@@ -6,3 +6,4 @@ git init
 
 checkout a local branch which track a remote branch:
 git checkout -b <local branch> <remote>/<branch>
+#
