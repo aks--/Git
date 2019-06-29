@@ -1,3 +1,3 @@
-##  About Git
+#  About Git
 
 Git Basics
