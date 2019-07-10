@@ -1,0 +1,38 @@
+1.clone a repository
+ -git clone <remote repo url>
+ 
+2.git help for command
+ -git help <verb>
+ -git <verb> -h/-help
+ -man git-<verb>
+
+3.convert a project dir to git repo dir
+ -git init <project dir>
+ -git init(if inside project dir)
+
+4.check list of remote shortname configured
+ -git remote -v
+ 
+5.git status
+ -git status
+ -git status -s
+ output: <c1><c2> ...
+ c1 -staging area 
+ c2-working directory 
+
+6. add files to staging area.
+ -git add <file1> <file2>
+ 
+ 7.commiting  files from staging area
+  -git commit -m "commit message"
+  
+ 8.commiting files from working directory directly
+  -git commit -am "commit message"
+ 9. git diff 
+ -git diff
+  diff of working dir and staging are
+ -git diff --staged
+  diff of staging area and last commit.
+ 10. 
+ 
+  
