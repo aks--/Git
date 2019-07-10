@@ -23,16 +23,16 @@
 6. add files to staging area.
  -git add <file1> <file2>
  
- 7.commiting  files from staging area
-  -git commit -m "commit message"
+7.commiting  files from staging area
+ -git commit -m "commit message"
   
- 8.commiting files from working directory directly
-  -git commit -am "commit message"
- 9. git diff 
+8.commiting files from working directory directly
+ -git commit -am "commit message"
+9. git diff 
  -git diff
   diff of working dir and staging are
  -git diff --staged
   diff of staging area and last commit.
- 10. 
- 
-  
+10.remove files from git repo
+ -rm <file1> 
+ -git add <file1>
