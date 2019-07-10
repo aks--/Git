@@ -4,7 +4,8 @@ there are two ways to setup git repository to start working:
  git clone <url of repo>
  ex: git clone https://github.com/eanurku/Git
 
--by default git create origin as shortname for remote url .this will be used by git push/pull/fetch command to work with remote repository.
+-by default git create origin as shortname for remote url .this will be used by git push/pull/fetch command to work 
+ with remote repository.
 -check all the remote url shortname configured 
  git remote -v 
 -add another remote url shortname 
@@ -33,4 +34,4 @@ there are two ways to setup git repository to start working:
  git config --global user.email "you@example.com"
  git config --global user.name "Your Name”
 -git pull command(in case needed):
-git pull <shortname> <branch> --allow-unrelated-histories
+ git pull <shortname> <branch> --allow-unrelated-histories
