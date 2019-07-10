@@ -1,0 +1,15 @@
+Different type of version control system:
+1.centralised version control system
+subversion
+perforce
+cvs
+
+2. Distributed version control system
+git
+mercurial
+
+cvcs vs dvcs:
+cvcs are delta-based vcs but git is snapshot based vcs 
+nearly all operation in git is local.
+git is super fast since all operation are local except push.
+

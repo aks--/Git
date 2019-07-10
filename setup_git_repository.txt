@@ -1,0 +1,36 @@
+there are two ways to setup git repository to start working:
+1. if git repo already exist on server then we need to just clone it. 
+-clone a repository
+ git clone <url of repo>
+ ex: git clone https://github.com/eanurku/Git
+
+-by default git create origin as shortname for remote url .this will be used by git push/pull/fetch command to work with remote repository.
+-check all the remote url shortname configured 
+ git remote -v 
+-add another remote url shortname 
+ git remote add <shortname> <remote repo url>
+
+2.if repository does not exist.
+-create a repository on github/git server.
+-create a folder and keep it name same as that of repository.
+ git init <project folder>
+
+-add few files.
+-do git add:
+ git add <file>
+-do git commit:
+ git commit -m "msg"
+
+-add remote repo url  as shortname in git local machine:
+ git remote add <shortname> <remote repo url>
+ ex: git remote add origin Test
+
+-after that push this project to git:
+ git push <shortname> <branch>
+ ex:git push origin master
+
+-first time user need to add below config:
+ git config --global user.email "you@example.com"
+ git config --global user.name "Your Name”
+-git pull command(in case needed):
+git pull <shortname> <branch> --allow-unrelated-histories

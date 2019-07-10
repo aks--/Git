@@ -1,9 +1,0 @@
-clone command:
-git clone <url>
-
-make a dir as git repo:
-git init
-
-checkout a local branch which track a remote branch:
-git checkout -b <local branch> <remote>/<branch>
-#
