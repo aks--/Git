@@ -36,3 +36,52 @@
 10.remove files from git repo
  -rm <file1> 
  -git add <file1>
+ -git commit -m "remove files"
+11.commit history
+ -git log
+12.remote shortnames
+ -git remote -v
+  show all remote shortname details
+ -git remote add <remote shortname> <remote repo url>
+  add a shortname for remote repo
+13.fetch/pull from remote
+  -git fetch <remote shorname>
+   fetch changes from remote into local repo  <shorname>/<branch>.
+  -git pull <shortname> <branch>
+   pull all changes to local repo <shorname>/<branch> and merge to local tracking branch <branch> as well.
+   
+14.push code to remote
+  -git push <shortname> <branch>
+  ex: git push origin master
+  -git push 
+   if local branch is already traking remote branch.
+15. inspecting remote 
+  -git remote show <remote shortname>
+  -git ls-remote
+  -git remote remove <shortname>
+  -git remote rename <old shortname> <new shortname>
+16.Tagging in git.
+  -git tag -l/--list
+   see list of tags
+  -git tag -a <tag name> -m "message for tag"
+   create an annotated tag
+  -git tag -a <tag name> <commit hash> -m "message for tag"
+   create an annotated tag wrt a commit
+  -git push <remote shortname> <tagname>
+   push tag to remote server
+  -git push <remote shortname> --tags
+   push all tags to remote server
+  -git tag -d <tag name>
+   delete a local tag
+  -git push <shortname> --delete <tag name>
+   delete remote tag
+  -git push <shortname> :refs/tags/<tagname>
+   delete remote tag 
+17. work with tag
+  -git checkout tag
+  -git checkout -b <branch>
+18.git aliases
+ -git config --global alias.co checkout
+ so now we can use co instead of checkout.
+ ex: git co <branch>
+   
