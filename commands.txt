@@ -1,6 +1,11 @@
 1.clone a repository
  -git clone <remote repo url>
- 
+  create local copy of remote repo  
+ -git cone <url> <dir name>
+  create local copy of remote repo in given directory
+ -git clone <shortname> <url>
+  create clone with <remote shortname> as mentioned
+
 2.git help for command
  -git help <verb>
  -git <verb> -h/-help
@@ -8,10 +13,14 @@
 
 3.convert a project dir to git repo dir
  -git init <project dir>
- -git init(if inside project dir)
+  create .git dir for the project and convert it to a git project
+ -git init
+ run this if inside  a project dir
 
 4.check list of remote shortname configured
  -git remote -v
+  see all remote shortname configured
+ 
  
 5.git status
  -git status
@@ -52,7 +61,8 @@
    
 14.push code to remote
   -git push <shortname> <branch>
-  ex: git push origin master
+   ex: git push origin master
+  -git push <shortname> <local branch>:<remote branch> 
   -git push 
    if local branch is already traking remote branch.
 15. inspecting remote 
@@ -82,6 +92,44 @@
   -git checkout -b <branch>
 18.git aliases
  -git config --global alias.co checkout
- so now we can use co instead of checkout.
- ex: git co <branch>
-   
+  so now we can use co instead of checkout.
+  ex: git co <branch>
+19.working with branch
+ -git branch <branch name>
+  create a branch
+ -git checkout <branc name>
+  switch HEAD to a branch
+ -git checkout -b <local branch> <master branch>
+  switch to <local branch> whose parent is last commit of <master branch>
+ -*git checkout <master branch>
+  *git merge <dev branch>
+  merge <dev branch> to <master branch> 
+ -git branch -d <branch name>
+  delete a branch
+ -git branch -D <branch name>
+  delete a branch forcefully
+ -git push <remote shortname> --delete <branch name> 
+  delete remote branch
+ -git branch
+  list all branch and point the current branch
+ -git branch -v
+  list branch with last commit 
+ -git branch -vv
+  see tracking branch of local branch 
+ -git branch --merged
+ -git branch --no-merged
+ -*git checkout local
+  *git branch --no-merged <master branch>
+  check what is not merged from local to master
+20. tracking branches 
+ -git checkout -b <local branch> <remote shortname>/<remote branch>
+  create a local branch which track a remote branch
+ -git checkout <branch> <remote shortname>/<remote branch>   
+ -git checkout --track <remote shortname>/<branch>
+ -git checkout <branch> 
+  if <branch> exist in remote server configured locally(shortname created already)
+  then it will create local branch which tracks <remote>/<branch> 
+ -git branch -u <remote shortname>/<branch> <local branch>
+  set upstream branch for <local branch> 
+ -git branch --set-upstream-to=<remote shortname>/<branch> <local branch>
+  set upstream branch for <local branch>
