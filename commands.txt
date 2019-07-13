@@ -130,6 +130,64 @@
   if <branch> exist in remote server configured locally(shortname created already)
   then it will create local branch which tracks <remote>/<branch> 
  -git branch -u <remote shortname>/<branch> <local branch>
-  set upstream branch for <local branch> 
+  set upstream branch for existing  <local branch> 
  -git branch --set-upstream-to=<remote shortname>/<branch> <local branch>
-  set upstream branch for <local branch>
+  set upstream branch for existing <local branch>
+21.git rebase as alternative to merge
+  step1:
+  -git checkout <dev branch>
+  -git rebase <master branch>
+   Now,dev branch will be having latest commit of master and on top of that all changes of dev branch with new commit has.
+  step 2:
+  -git checkout <master branch>
+  -git merge <dev branch>  
+   So new commits from <dev branch> will be fadst-forward merged to <master branch>
+22.commits diff across branches
+  -git log <master branch>..<dev branch>
+   get commits in <dev branch> which are not there in <master branch>
+  -*git log <remote shortname>/<branch>..HEAD 
+   *git log <remote shortname>/< branch>..
+   list of commits going to be pushed to remote repository.
+   ex: git log origin/master..HEAD
+  -git log <branch1> --not <branch2> <branch3>
+   list the commits available in branch1 but not in branch 2 and branch 3
+  -git diff <branch1>..<branch2>
+  -git diff <commit1> <commit2>
+23.squash the commits   
+ -*git checkout -b <dev clone branch > <remote shortname>/<branch>
+  *git merge --squash <dev branch> 
+  *git commit -m "singl commit message" 
+  *git push <remote shortname> <dev clone branch> 
+  --squash option provide functionality to take all commits changes from <dev branch> and
+  apply on <dev clone branch> like merge but without commiting it.
+
+24.git merge-base
+ -git merge-base <branch1> <branch2>
+  get common commit of both branch
+
+25.cherry pick
+ -*git checkout <master branch>
+  *git cherry-pick <commit hash>
+  pick the commit from dev branch and apply to master branch
+
+26.generating build number
+  -git describe <master branch> 
+   for Annotated tag
+  -git describe <master branch> --tag
+   for lightweight tag
+27.preparing release
+  -git archieve <master branch> --prefix='project/'|gzip `git describe <master branch>`.tar.gz
+  -git archieve <master branch> --prefix='project/' --format=zip >'git describe <master branch>'.zip
+
+28.project maintainence
+ -git format-patch -M <remote shortname>/branch>
+ -git apply --check <patch file>
+ -git apply <patch file>
+  apply patch if created by git diff
+ -git am <patch file> 
+  apply patch if created by git format-patch command
+ -git am --resolved
+ -git am -3 <patch file>
+ -git request-pull <remote shorname>/<branch> <remote shorname>
+
+
