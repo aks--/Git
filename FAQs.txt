@@ -1,0 +1,12 @@
+1.types of merge?
+ Ans. fast forward merge,3 way merge
+2.what is use of squashing?
+ Ans. to combine multiple local commits into single commit.
+3.how to modify last commit message?
+Ans. git commit --amend command
+4.git merge vs git rebase?
+Ans. git rebase keeps commit history like all commits happened on master branch only and in order.
+   
+5.diff between reset and checkout?
+Ans.reset move the branch reference 
+    checkout moves the HEAD reference. 
