@@ -142,7 +142,7 @@
   -git checkout <master branch>
   -git merge <dev branch>  
    So new commits from <dev branch> will be fadst-forward merged to <master branch>
-22.commits diff across branches
+22.commits diff across branches,double dot,triple dot
   -git log <master branch>..<dev branch>
    get commits in <dev branch> which are not there in <master branch>
   -*git log <remote shortname>/<branch>..HEAD 
@@ -151,8 +151,13 @@
    ex: git log origin/master..HEAD
   -git log <branch1> --not <branch2> <branch3>
    list the commits available in branch1 but not in branch 2 and branch 3
+  -git log <branch1> <branch2> ^<branch3> 
+   list the commits available in branch1 but not in branch 2 and branch 3
   -git diff <branch1>..<branch2>
   -git diff <commit1> <commit2>
+  -git log <master branch>...<dev branch>
+   list the commits reachable from either of branch but not from both branch.
+  -git log --left-right <master branch>...<dev branch> 
 23.squash the commits   
  -*git checkout -b <dev clone branch > <remote shortname>/<branch>
   *git merge --squash <dev branch> 
@@ -189,5 +194,66 @@
  -git am --resolved
  -git am -3 <patch file>
  -git request-pull <remote shorname>/<branch> <remote shorname>
-
-
+29.inspecting commits 
+ -git log
+ -git show <commit hash>
+ -git log --abbrev-commit --pretty-online
+ -git show <branch>
+  show last commit in branch
+30.check HEAD history
+ -git reflog
+  show history of HEAD 
+ -git show HEAD@{n} 
+  check n-th  history of HEAD 
+ -git log -g
+ -git  show HEAD^
+  show parent commit details of HEAD
+ -git show <commit hash>^
+ -git show HEAD~
+  show parent commit of HEAD
+ -git show HEAD~n
+ -git show HEAD^~n 
+ -git 
+31.interactive staging
+ -*git add -i
+  *after that use squash keyword to squash all commits and create single commit for them.
+32.stashing and cleaning  
+ -*git checkout master 
+  *do some changes and do not commit.
+  *git stash
+  *git stash push
+  *git stash save  
+  Above stash commands add changes in temp location which can be applied back on that branch 
+ -git stash list 
+ -git stash apply 
+  apply last stashed changes
+ -git stash appply stash@{n}
+  apply n-th stash changes 
+ -git stash pop
+  apply last stash changes and drop the stash from temp. 
+ -git stash pop stash@{n}
+ -
+33. search in git
+  -git grep <search string>
+34.git amend
+  -git commit --amend
+   change last commit message  
+  -*do some changes and stage those files
+   *git commit --amend
+    above command replace last commit with the staged changes commit 
+35.git reset 
+  -*git checkout <dev branch>
+   *git reset <master branch> 
+  -git reset --soft HEAD~n
+  -git reset --soft <commit hash>
+   remove changes from last n-1 commits and keep it in staging area.
+  -git reset HEAD
+  -git reset --mixed HEAD 
+  -git reset --mixed HEAD~n
+   remove changes from n-1 commits and keep it in working directory only.
+  -git reset --hard HEAD~n
+   remove changes of last n-1 commit from working directory.
+  -git reset <HEAD/Commit> <file> 
+   remove changes in file from commit to staging are.
+  -git checkout <HEAD/commit> <file>
+   remove changes in files from working directory
